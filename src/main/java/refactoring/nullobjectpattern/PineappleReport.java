@@ -1,23 +1,18 @@
 package refactoring.nullobjectpattern;
 
 public class PineappleReport {
-    private final PineappleTree pineappleTree;
+    private final IPineappleInfoProvider pineappleInfoProvider;
 
-    public PineappleReport(PineappleTree pineappleTree){
-        this.pineappleTree = pineappleTree;
+    public PineappleReport(PineappleTree pineappleTree,
+                           PineappleInfoProviderFactory pineappleInfoProviderFactory){
+        this.pineappleInfoProvider=pineappleInfoProviderFactory.create(pineappleTree);
     }
 
     String getColor(){
-        if(pineappleTree.getPineapple() == null){
-            return "no color";
-        }
-        return pineappleTree.getPineapple().getColor();
+        return pineappleInfoProvider.getColor();
     }
 
     String getHeight(){
-        if(pineappleTree.getPineapple() == null){
-            return "no height";
-        }
-        return pineappleTree.getPineapple().getHeight();
+        return pineappleInfoProvider.getHeight();
     }
 }

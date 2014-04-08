@@ -10,9 +10,6 @@ public class PineappleTree {
     }
 
     public Pineapple getPineapple() {
-
-
-
         return pineapple;
     }
 }
