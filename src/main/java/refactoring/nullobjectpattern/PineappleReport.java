@@ -3,9 +3,8 @@ package refactoring.nullobjectpattern;
 public class PineappleReport {
     private final IPineappleInfoProvider pineappleInfoProvider;
 
-    public PineappleReport(PineappleTree pineappleTree,
-                           PineappleInfoProviderFactory pineappleInfoProviderFactory){
-        this.pineappleInfoProvider=pineappleInfoProviderFactory.create(pineappleTree);
+    public PineappleReport(PineappleInfoProviderFactory pineappleInfoProviderFactory){
+        this.pineappleInfoProvider = pineappleInfoProviderFactory.create();
     }
 
     String getColor(){

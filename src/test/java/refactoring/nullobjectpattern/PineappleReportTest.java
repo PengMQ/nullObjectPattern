@@ -27,8 +27,8 @@ public class PineappleReportTest {
         Pineapple pineapple = new Pineapple("red", "1");
         PineappleTree pineappleTree = new PineappleTree(pineapple);
         PineappleInfoProvider pineappleInfoProvider = new PineappleInfoProvider(pineappleTree);
-        given(pineappleInfoProviderFactory.create(any(PineappleTree.class))).willReturn(pineappleInfoProvider);
-        pineAppleReport = new PineappleReport(pineappleTree, pineappleInfoProviderFactory);
+        given(pineappleInfoProviderFactory.create()).willReturn(pineappleInfoProvider);
+        pineAppleReport = new PineappleReport(pineappleInfoProviderFactory);
 
     }
 
